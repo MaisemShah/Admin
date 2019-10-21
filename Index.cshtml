@@ -1,0 +1,45 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<style>
+    body.rr {
+        height: 1200px;
+        width: 1000px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+</style>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<img class="rr" src="https://www.navistar.com/StaticFiles/navistar/PromoImages/navistar_home_hero.jpg" alt=" Text" />
+@if (User.IsInRole("Admin"))
+{
+    <section>
+        <h1>Welcome, Admin!</h1>
+    </section>
+}
+else if (User.IsInRole("Slt"))
+{
+    <section>
+        <h1>Welcome,Slt!</h1>
+    </section>
+}
+else if (User.IsInRole("DeptHead"))
+{
+    <section>
+        <h1>Welcome, DeptHead!</h1>
+    </section>
+}
+else
+{
+    <section>
+        <h1>Welcome</h1>
+    </section>
+}
